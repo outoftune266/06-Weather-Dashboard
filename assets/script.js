@@ -4,6 +4,8 @@ let lat;
 let lon;
 let placeName;
 
+$("#cityName").text($("li")[0].innerHTML);
+
 //Adds input box to list of cities - new items are currently not clickable
 $("button").on("click", function() {
     if ($("#searchInput").val() !== "") {
@@ -37,13 +39,20 @@ function getLocation() {
 
 //Gets weather info for specified Lat/Long
 function getWeather() {
-    let queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=757976158322ce33a69d16ccf3339824";
-
+    let queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=757976158322ce33a69d16ccf3339824";
+    $("#cityName").text(placeName);
+    
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        let icon = response.current.weather[0].icon;
+        $("img").attr("src", "http://openweathermap.org/img/wn/" + icon + ".png");
+        $("#temp").text(response.current.temp);
+        $("#humidity").text(response.current.humidity);
+        $("#windSpeed").text(response.current.wind_speed);
+        // $("#uvIndex").text(response.current.uvi);
     });
 
 };

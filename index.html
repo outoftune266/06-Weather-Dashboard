@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
@@ -44,13 +44,18 @@
                 </nav>
             </div>
             <div class="col col-lg-9">
-                <main>
-                    <div class="jumbotron jumbotron-fluid">
+                <main class="container">
+                    <div class="row forecastToday">
                         <div class="container">
-                            <h1 class="display-4">Fluid jumbotron</h1>
-                            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of
-                                its parent.</p>
+                        <h2 id="cityName"></h2><img alt="Weather Icon"><br>
+                        <p>Temperature: <span id="temp"></span></p><br>
+                        <p>Humidity: <span id="humidity"></span>%</p><br>
+                        <p>Wind Speed: <span id="windSpeed"></span>MPH</p><br>
+                        <p>UV Index: <span id="uvIndex"></span></p><br>
                         </div>
+                    </div>
+                    <div class="row">
+
                     </div>
                 </main>
             </div>
