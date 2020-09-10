@@ -4,7 +4,34 @@ let lat;
 let lon;
 let placeName;
 
+//functions retrieve location list from localstorage and display
+//if no local storage exists default cities are assigned
+getCities();
+function getCities() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+
+    if (storedCities !== null) {
+        locations = storedCities;
+    } else {
+        locations = ["Nashville, TN", "Okalhoma City, OK", "Boise,ID"];
+    }
+    displayCities();
+};
+
+function displayCities() {
+    for (var i = 0; i < locations.length; i++) {
+        let newCity = $("<li>");
+        newCity.text(locations[i]);
+        newCity.attr("class", "list-group-item");
+        $("ul").append(newCity);
+    }
+};
+
+
+
 $("#cityName").text($("li")[0].innerHTML);
+placeName = $("li")[0].innerHTML;
+getLocation();
 
 //Adds input box to list of cities - new items are currently not clickable
 $("button").on("click", function() {
