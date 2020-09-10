@@ -1,8 +1,25 @@
 //Global Variables
 let locations = [];
-let lat = 36.162663;
-let lon = -86.781601;
-let placeName = "Oklahoma City, OK";
+let lat;
+let lon;
+let placeName;
+
+//Adds input box to list of cities - new items are currently not clickable
+$("button").on("click", function() {
+    if ($("#searchInput").val() !== "") {
+    let newCity = $("#searchInput").val();
+    let list = $("<li>");
+    list.attr("class", "list-group-item");
+    list.text(newCity);
+    $("ul").prepend(list);
+    };
+})
+
+//click listener for save cities list
+$("li").on("click", function() {
+    placeName = this.innerHTML;
+    getLocation();
+});
 
 //Takes search input and gets Lat/Long to pass to getWeather fuction
 function getLocation() {
@@ -14,6 +31,7 @@ function getLocation() {
         console.log(response);
         lat = response.results[0].geometry.lat;
         lon = response.results[0].geometry.lng;
+        getWeather();
     });
 };
 
