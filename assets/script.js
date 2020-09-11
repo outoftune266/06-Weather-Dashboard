@@ -27,6 +27,7 @@ function displayCities() {
     }
 };
 
+//$("#currentDay").text(moment(L));
 
 
 $("#cityName").text($("li")[0].innerHTML);
@@ -79,7 +80,7 @@ function getWeather() {
         $("#temp").text(response.current.temp);
         $("#humidity").text(response.current.humidity);
         $("#windSpeed").text(response.current.wind_speed);
-        // $("#uvIndex").text(response.current.uvi);
+        $("#uvIndex").text(response.current.uvi);
     });
 
 };
