@@ -3,7 +3,7 @@ let locations = [];
 let lat;
 let lon;
 let placeName;
-let day = moment().format("L");
+let convdataTime;
 
 //functions retrieve location list from localstorage and display
 //if no local storage exists default cities are assigned
@@ -28,8 +28,6 @@ function displayCities() {
     }
 };
 
-//$("#currentDay").text(day);
-
 
 $("#cityName").text($("li")[0].innerHTML);
 placeName = $("li")[0].innerHTML;
@@ -52,17 +50,19 @@ $("button").on("click", function() {
     
 });
 
-// function saveTask() {
-//     //event.preventDefault();
-//     //taskTime = event.target.dataset.hour;
+// convert Unix Timecode to date
+function convert(timestamp){
+
+    // Unixtimestamp
+    var unixtimestamp = timestamp;
+   
+    // Convert timestamp to milliseconds
+    var date = new Date(unixtimestamp*1000);
+   
+    convdataTime = date.getMonth() +'/'+ date.getDate() +'/'+ date.getFullYear();
     
-//     taskContent = $(event.target.previousElementSibling).val();
-//     console.log(taskContent);
-
-//      addEntry(taskTime, taskContent);
-//      localStorage.setItem("tasks", JSON.stringify(tasks));
-// };
-
+    console.log(convdataTime);
+   }
 
 
 
@@ -90,12 +90,21 @@ function getWeather() {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+
+        //displays current forecast info
+        let timestamp = response.current.dt;
+        convert(timestamp);
+        $("#currentDay").text(convdataTime);
         let icon = response.current.weather[0].icon;
         $("img").attr("src", "http://openweathermap.org/img/wn/" + icon + ".png");
         $("#temp").text(response.current.temp);
         $("#humidity").text(response.current.humidity);
         $("#windSpeed").text(response.current.wind_speed);
         $("#uvIndex").text(response.current.uvi);
+
+        //displays 5-day forecast info
+
+        
     });
 
 };
