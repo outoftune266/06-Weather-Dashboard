@@ -122,3 +122,4 @@ $("li").on("click", function () {
     placeName = this.innerHTML;
     getLocation();
 });
+

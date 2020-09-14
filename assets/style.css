@@ -15,3 +15,11 @@ header {
 .sidebar {
     background: rgb(216, 216, 216);
 }
+
+.search {
+    font-size: 25px;
+}
+
+li {
+    cursor: pointer;
+}
