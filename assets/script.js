@@ -3,6 +3,7 @@ let locations = [];
 let lat;
 let lon;
 let placeName;
+let day = moment().format("L");
 
 //functions retrieve location list from localstorage and display
 //if no local storage exists default cities are assigned
@@ -13,7 +14,7 @@ function getCities() {
     if (storedCities !== null) {
         locations = storedCities;
     } else {
-        locations = ["Nashville, TN", "Okalhoma City, OK", "Boise,ID"];
+        locations = ["Okalhoma City, OK", "Nashville, TN"];
     }
     displayCities();
 };
@@ -23,11 +24,11 @@ function displayCities() {
         let newCity = $("<li>");
         newCity.text(locations[i]);
         newCity.attr("class", "list-group-item");
-        $("ul").append(newCity);
+        $("ul").prepend(newCity);
     }
 };
 
-//$("#currentDay").text(moment(L));
+//$("#currentDay").text(day);
 
 
 $("#cityName").text($("li")[0].innerHTML);
@@ -37,19 +38,33 @@ getLocation();
 //Adds input box to list of cities - new items are currently not clickable
 $("button").on("click", function() {
     if ($("#searchInput").val() !== "") {
+
     let newCity = $("#searchInput").val();
     let list = $("<li>");
     list.attr("class", "list-group-item");
     list.text(newCity);
     $("ul").prepend(list);
-    };
-})
-
-//click listener for save cities list
-$("li").on("click", function() {
-    placeName = this.innerHTML;
+    placeName = $("#searchInput").val();
     getLocation();
+    locations = locations.concat(placeName);
+    localStorage.setItem("cities", JSON.stringify(locations));
+    };
+    
 });
+
+// function saveTask() {
+//     //event.preventDefault();
+//     //taskTime = event.target.dataset.hour;
+    
+//     taskContent = $(event.target.previousElementSibling).val();
+//     console.log(taskContent);
+
+//      addEntry(taskTime, taskContent);
+//      localStorage.setItem("tasks", JSON.stringify(tasks));
+// };
+
+
+
 
 //Takes search input and gets Lat/Long to pass to getWeather fuction
 function getLocation() {
@@ -85,3 +100,8 @@ function getWeather() {
 
 };
 
+//click listener for save cities list
+$("li").on("click", function() {
+    placeName = this.innerHTML;
+    getLocation();
+});
