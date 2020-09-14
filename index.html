@@ -43,61 +43,63 @@
                 <main class="container">
                     <div class="row forecastToday">
                         <div class="container">
-                        <h2 id="cityName"></h2><h2 id="currentDay"></h2><img alt="Weather Icon"><br>
-                        <p>Temperature: <span id="temp"></span></p><br>
-                        <p>Humidity: <span id="humidity"></span>%</p><br>
-                        <p>Wind Speed: <span id="windSpeed"></span>MPH</p><br>
-                        <p>UV Index: <span id="uvIndex"></span></p><br>
+                            <h2 id="cityName"></h2>
+                            <h2 id="currentDay"></h2><img id="currentImage" alt="Weather Icon"><br>
+                            <p>Temperature: <span id="temp"></span></p><br>
+                            <p>Humidity: <span id="humidity"></span>%</p><br>
+                            <p>Wind Speed: <span id="windSpeed"></span>MPH</p><br>
+                            <p>UV Index: <span id="uvIndex"></span></p><br>
                         </div>
                     </div>
                     <div class="row">
                         <h2>5-day Forecast:</h2>
                     </div>
                     <div class="row">
-                        <div class="card" style="width: 10rem;">
+                        <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text">Temp: <span></span></p>
+                                <h5 id="cardDate1" class="card-title"></h5>
+                                <img id="cardImage1">
+                                <p id="cardTemp1" class="card-text"></p>
+                                <p id="cardHum1" class="card-text"></p>
                             </div>
-                          </div>
-                          <div class="card" style="width: 10rem;">
+                        </div>
+                        <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text"></p>
+                                <h5 id="cardDate2" class="card-title"></h5>
+                                <img id="cardImage2">
+                                <p id="cardTemp2" class="card-text"></p>
+                                <p id="cardHum2" class="card-text"></p>
                             </div>
-                          </div>
-                          <div class="card" style="width: 10rem;">
+                        </div>
+                        <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text"></p>
-                              
+                                <h5 id="cardDate3" class="card-title"></h5>
+                                <img id="cardImage3">
+                                <p id="cardTemp3" class="card-text"></p>
+                                <p id="cardHum3" class="card-text"></p>
                             </div>
-                          </div>
-                          <div class="card" style="width: 10rem;">
+                        </div>
+                        <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text"></p>
-                              
+                                <h5 id="cardDate4" class="card-title"></h5>
+                                <img id="cardImage4">
+                                <p id="cardTemp4" class="card-text"></p>
+                                <p id="cardHum4" class="card-text"></p>
                             </div>
-                          </div>
-                          <div class="card" style="width: 10rem;">
+                        </div>
+                        <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                              <p class="card-text"></p>
-                              
+                                <h5 id="cardDate5" class="card-title"></h5>
+                                <img id="cardImage5">
+                                <p id="cardTemp5" class="card-text"></p>
+                                <p id="cardHum5" class="card-text"></p>
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </main>
             </div>
         </div>
     </div>
-
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
