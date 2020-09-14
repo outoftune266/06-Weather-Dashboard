@@ -7,7 +7,7 @@ let timestamp;
 let convdataTime;
 let image;
 
-//functions retrieve location list from localstorage and display
+//retrieves location list from localstorage and display
 //if no local storage exists default cities are assigned
 getCities();
 function getCities() {
@@ -21,6 +21,7 @@ function getCities() {
     displayCities();
 };
 
+//displays list of cities
 function displayCities() {
     for (var i = 0; i < locations.length; i++) {
         let newCity = $("<li>");
@@ -30,7 +31,7 @@ function displayCities() {
     }
 };
 
-
+//grabs frist city from list and calls funciton to display weather info
 $("#cityName").text($("li")[0].innerHTML);
 placeName = $("li")[0].innerHTML;
 getLocation();
@@ -83,7 +84,7 @@ function getLocation() {
 //Gets and displayes weather info for specified Lat/Long
 function getWeather() {
     let queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=757976158322ce33a69d16ccf3339824";
-    $("#cityName").text(placeName);
+    
 
     $.ajax({
         url: queryURL,
@@ -94,13 +95,13 @@ function getWeather() {
         //displays current forecast info
         timestamp = response.current.dt;
         convert(timestamp);
-        $("#currentDay").text(convdataTime);
+        $("#cityName").text(placeName +"   (" + convdataTime + ")");
         image = response.current.weather[0].icon;
         $("#currentImage").attr("src", "http://openweathermap.org/img/wn/" + image + ".png");
-        $("#temp").text(response.current.temp);
-        $("#humidity").text(response.current.humidity);
-        $("#windSpeed").text(response.current.wind_speed);
-        $("#uvIndex").text(response.current.uvi);
+        $("#temp").text("Temperature: " + response.current.temp + " F");
+        $("#humidity").text("Humidity: " + response.current.humidity + "%");
+        $("#windSpeed").text("Wind Speed: " + response.current.wind_speed + " MPH");
+        $("#uvIndex").text("UV Index: " + response.current.uvi);
 
         //displays 5-day forecast info
         for (var i = 1; i < 6; i++) {
@@ -114,7 +115,6 @@ function getWeather() {
             $("#cardHum" + i).text("Humidity: " + response.daily[i].humidity + "%");
         };
     });
-
 };
 
 //click listener for save cities list

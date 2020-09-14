@@ -12,13 +12,11 @@
 
 <body>
 
+    <header>Weather Dashboard</header>
+
     <div class="container">
         <div class="row">
-            <header>Weather Dashboard</header>
-        </div>
-
-        <div class="row">
-            <div class="col col-lg-3">
+            <div class="col sidebar">
                 <nav>
                     <div class="row">
                         <div class="input-group mb-3 container">
@@ -39,16 +37,19 @@
                         <ul class="list-group"></ul>
                 </nav>
             </div>
+
             <div class="col col-lg-9">
                 <main class="container">
                     <div class="row forecastToday">
                         <div class="container">
-                            <h2 id="cityName"></h2>
-                            <h2 id="currentDay"></h2><img id="currentImage" alt="Weather Icon"><br>
-                            <p>Temperature: <span id="temp"></span></p><br>
-                            <p>Humidity: <span id="humidity"></span>%</p><br>
-                            <p>Wind Speed: <span id="windSpeed"></span>MPH</p><br>
-                            <p>UV Index: <span id="uvIndex"></span></p><br>
+                            <div class="row">
+                                <h2 id="cityName" class="col-6"></h2>
+                                <img id="currentImage" alt="Weather Icon">
+                            </div><br>
+                            <p id="temp"></p><br>
+                            <p id="humidity"></p><br>
+                            <p id="windSpeed"></p><br>
+                            <p id="uvIndex"></p><br>
                         </div>
                     </div>
                     <div class="row">
@@ -58,7 +59,7 @@
                         <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
                                 <h5 id="cardDate1" class="card-title"></h5>
-                                <img id="cardImage1">
+                                <img id="cardImage1" alt="weather">
                                 <p id="cardTemp1" class="card-text"></p>
                                 <p id="cardHum1" class="card-text"></p>
                             </div>
@@ -66,7 +67,7 @@
                         <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
                                 <h5 id="cardDate2" class="card-title"></h5>
-                                <img id="cardImage2">
+                                <img id="cardImage2" alt="weather">
                                 <p id="cardTemp2" class="card-text"></p>
                                 <p id="cardHum2" class="card-text"></p>
                             </div>
@@ -74,7 +75,7 @@
                         <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
                                 <h5 id="cardDate3" class="card-title"></h5>
-                                <img id="cardImage3">
+                                <img id="cardImage3" alt="weather">
                                 <p id="cardTemp3" class="card-text"></p>
                                 <p id="cardHum3" class="card-text"></p>
                             </div>
@@ -82,7 +83,7 @@
                         <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
                                 <h5 id="cardDate4" class="card-title"></h5>
-                                <img id="cardImage4">
+                                <img id="cardImage4" alt="weather">
                                 <p id="cardTemp4" class="card-text"></p>
                                 <p id="cardHum4" class="card-text"></p>
                             </div>
@@ -90,7 +91,7 @@
                         <div class="card text-white bg-primary" style="width: 10rem;">
                             <div class="card-body">
                                 <h5 id="cardDate5" class="card-title"></h5>
-                                <img id="cardImage5">
+                                <img id="cardImage5" alt="weather">
                                 <p id="cardTemp5" class="card-text"></p>
                                 <p id="cardHum5" class="card-text"></p>
                             </div>
