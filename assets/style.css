@@ -23,3 +23,7 @@ header {
 li {
     cursor: pointer;
 }
+
+footer {
+    text-align: center;
+}
