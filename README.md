@@ -18,6 +18,7 @@ USER STORY:
 
 Future Development Goals:
 - Add ability to clear list of cities
+- Add visual elements that change based on current weather conditions of the viewed city
 
 Contributors:
 - Zak Monnet:   [Github Profile](https://github.com/outoftune266)
