@@ -1,4 +1,4 @@
-# WeatherDashboard
+# Weather Dashboard
 
 Weather Dashboard is a simple tool that allows you view current weather conditions and 5-day forecast information for a list of cities. Cities can be added to the list with the search funciton. List of added cities are saved in local storage for the next visit.
 
