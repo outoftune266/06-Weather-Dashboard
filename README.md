@@ -30,3 +30,6 @@ API's Used:
 Libraries Used:
 - Bootstrap:   [Website](https://getbootstrap.com/)
 - JQuery: [Website](https://materializecss.com/)
+
+License: 
+- MIT
