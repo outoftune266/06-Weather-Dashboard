@@ -70,7 +70,7 @@ function getLocation() {
   let queryURL =
     "https://api.opencagedata.com/geocode/v1/json?q=" +
     placeName +
-    "&key=0db9bc77734f422d9b0cdac72bab7fa4";
+    "&key=c8fc06cad34b41b28866980ffe8bd9fb";
   $.ajax({
     url: queryURL,
     method: "GET",
