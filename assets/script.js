@@ -89,7 +89,7 @@ function getWeather() {
     lat +
     "&lon=" +
     lon +
-    "&units=imperial&appid=964931716339cb2e745ff6a40cec8513";
+    "&appid=33f1008b0d6651bc6ebbe0a72f84380c";
 
   $.ajax({
     url: queryURL,
