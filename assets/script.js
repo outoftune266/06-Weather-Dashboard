@@ -85,7 +85,7 @@ function getLocation() {
 //Gets and displayes weather info for specified Lat/Long
 function getWeather() {
   let queryURL =
-    "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+    "https://api.openweathermap.org/data/3.0/onecall?lat=" +
     lat +
     "&lon=" +
     lon +
